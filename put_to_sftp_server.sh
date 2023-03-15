@@ -1,27 +1,6 @@
 #!/bin/bash
 
-sftp_put() {
-    user=$1
-    host=$2
-    from=$3
-    to=$4
-
-    expect -c "
-    set timeout 5
-    
-    spawn sftp -r ${user}@${host}
-    
-    expect \"sftp>\"
-    send \"cd ${to}\r\"
-
-    expect \"sftp>\"
-    send \"put ${from}/*\r\"
-    
-    expect \"sftp>\"
-    send \"exit\"
-    "
-
-}
+. ./functions.sh
 
 # testfile.txtに追記
 ./add_testfile.sh
