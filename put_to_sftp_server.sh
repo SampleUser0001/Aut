@@ -15,7 +15,7 @@ sftp_put() {
     send \"cd ${to}\r\"
 
     expect \"sftp>\"
-    send \"put ${from}\r\"
+    send \"put ${from}/*\r\"
     
     expect \"sftp>\"
     send \"exit\"
@@ -33,4 +33,4 @@ source ./env/sftp_server.env
 send_date=`date '+%Y%m%d_%H%M%S'`
 
 # sftpでサーバにputする。
-sftp_put ${sftp_server_user} ${sftp_server_host} './testfile.txt' ${sftp_server_dir}
+sftp_put ${sftp_server_user} ${sftp_server_host} './datas' ${sftp_server_dir}

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-date >> testfile.txt
+date >> datas/testfile.txt
 
