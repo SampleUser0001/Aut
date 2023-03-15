@@ -1,3 +1,2 @@
-cd %s
-put %s
+put -r %s %s
 exit

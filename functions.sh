@@ -19,7 +19,7 @@ create_sftp_put_bat() {
     format=`cat bat/format`
     bat_file_path='bat/batfile_'$send_date
 
-    printf "${format}" ${to} ${from} > $bat_file_path
+    printf "${format}" ${from} ${to}> $bat_file_path
         
     echo $bat_file_path
 }

@@ -9,7 +9,7 @@ suite() {
 create_sftp_put_bat_test() {
     batpath=`create_sftp_put_bat 'hoge' 'piyo'`
     
-    expect=`echo -e 'cd piyo\nput hoge\nexit\n'`
+    expect=`echo -e 'put -r hoge piyo\nexit\n'`
     actural=`cat $batpath`
 
     assertEquals "$expect" "$actural"
