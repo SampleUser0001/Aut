@@ -1,7 +1,7 @@
 # sftp put自動化 サンプル
 
 sftp のputをシェルスクリプトで実行する。  
-expectを使う。
+-bオプションを使用する。実行するbatは```bat/format```から生成する。
 
 ## 前提
 
@@ -10,6 +10,6 @@ expectを使う。
 
 ## 実行
 
-``` bash 
+``` bash
 sh put_to_sftp_server.sh
 ```
