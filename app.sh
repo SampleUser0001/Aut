@@ -33,7 +33,15 @@ if [ $operation = "put" ]; then
 
 elif [ $operation = "get" ]; then
     # get
-    echo 'get'
+    
+    . ./get_functions.sh
+
+    sftp_get ${sftp_user} \
+             ${sftp_host} \
+             ${from_data_dir} \
+             ${to_data_dir} \
+             ${flag_file_name}
+             
 else
     # 
     echo 'not found operation'
