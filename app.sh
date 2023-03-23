@@ -18,6 +18,12 @@ if [ $operation = "put" ]; then
     # testfile.txtに追記
     ./add_testfile.sh
     . ./put_functions.sh
+    
+    sftp_put ${sftp_user} \
+             ${sftp_host} \
+             ${from_data_dir} \
+             ${to_data_dir} \
+             ${flag_file_name}
 
 elif [ $operation = "get" ]; then
     # get

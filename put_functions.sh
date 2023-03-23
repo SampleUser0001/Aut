@@ -15,6 +15,7 @@ sftp_put() {
     flag_filename=$5
 
     sftp_command=`create_sftp_put_bat $from $to $flag_filename`
+    cd ${from}
     sftp -b $sftp_command -r ${user}@${host}
     rm $sftp_command
 }
