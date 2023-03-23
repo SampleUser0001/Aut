@@ -1,0 +1,5 @@
+cd datas
+put ./testfile.txt ./testfile.txt
+put ./file ./file
+put ./flag ./flag
+exit

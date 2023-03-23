@@ -1,15 +1,20 @@
 #!/bin/bash
 
-. ./functions.sh
+. ./put_functions.sh
 
 suite() {
     suite_addTest create_sftp_put_bat_test
 }
 
 create_sftp_put_bat_test() {
-    batpath=`create_sftp_put_bat 'hoge' 'piyo'`
+    current_dir=$(cd $(dirname $0);pwd)
+    batpath=`create_sftp_put_bat ${current_dir}/'datas' 'piyo' 'flag'`
     
-    expect=`echo -e 'put -r hoge piyo\nexit\n'`
+    expect=`echo -e 'cd piyo
+put ./testfile.txt ./testfile.txt
+put ./file ./file
+put ./flag ./flag
+exit'`
     actural=`cat $batpath`
 
     assertEquals "$expect" "$actural"
