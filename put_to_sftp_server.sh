@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 . ./functions.sh
 
 # testfile.txtに追記
