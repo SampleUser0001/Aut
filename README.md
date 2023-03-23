@@ -11,5 +11,5 @@ sftp のputをシェルスクリプトで実行する。
 ## 実行
 
 ``` bash
-sh put_to_sftp_server.sh
+sh app.sh put sftp_user 172.31.14.225 $(pwd)/datas datas flag
 ```
